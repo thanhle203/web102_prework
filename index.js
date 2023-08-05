@@ -190,7 +190,7 @@ console.log(totalUnfunded);
 // create a string that explains the number of unfunded games using the ternary operator
  
 let desc = `
-    A total of $${totalRaised.toLocaleString("en-US")} has been raised for 11 games. ${totalUnfunded > 0 ? "Currently, " + totalUnfunded + " game(s) remains unfunded. We need your help to fund these awesome games!" : "Thank you for helping us fund these AMAZING games!!"}
+    A total of $${totalRaised.toLocaleString("en-US")} has been raised for 11 games. ${totalUnfunded > 0 ? `Currently,  ${totalUnfunded} game(s) remains unfunded. We need your help to fund these awesome games!` : "Thank you for helping us fund these AMAZING games!!"}
 ` 
 
 // create a new DOM element containing the template string and append it to the description container
