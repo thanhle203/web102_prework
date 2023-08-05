@@ -84,7 +84,9 @@ contributionsCard.innerHTML = display;
 // grab the amount raised card, then use reduce() to find the total amount raised
 const raisedCard = document.getElementById("total-raised");
 
-const totalRaised = GAMES_JSON.reduce( (acc, i) => { return acc + i.pledged;}, 0);
+const totalRaised = GAMES_JSON.reduce( (acc, i) => { 
+    return acc + i.pledged;
+}, 0);
 
 // set inner HTML using template literal
 
@@ -97,7 +99,9 @@ raisedCard.innerHTML = display;
 // grab number of games card and set its inner HTML
 const gamesCard = document.getElementById("num-games");
 
-const totalGames = GAMES_JSON.reduce( (acc, i) => { return acc + 1}, 0);
+const totalGames = GAMES_JSON.reduce( (acc, i) => { 
+    return acc + 1
+}, 0);
 
 display = `
     ${totalGames.toLocaleString('en-US')}
@@ -174,11 +178,26 @@ const descriptionContainer = document.getElementById("description-container");
 
 // use filter or reduce to count the number of unfunded games
 
-
+let totalUnfunded = GAMES_JSON.reduce( (acc, i) => {
+    if(i.pledged < i.goal){
+        return acc + 1;
+    }
+    else{
+        return acc;
+    }
+}, 0);
+console.log(totalUnfunded);
 // create a string that explains the number of unfunded games using the ternary operator
-
+ 
+let desc = `
+    A total of $${totalRaised.toLocaleString("en-US")} has been raised for 11 games. ${totalUnfunded > 0 ? "Currently, " + totalUnfunded + " game(s) remains unfunded. We need your help to fund these awesome games!" : "Thank you for helping us fund these AMAZING games!!"}
+` 
 
 // create a new DOM element containing the template string and append it to the description container
+
+let element = document.createElement("p");
+element.innerHTML = desc;
+descriptionContainer.appendChild(element);
 
 /************************************************************************************
  * Challenge 7: Select & display the top 2 games
