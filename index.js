@@ -186,7 +186,7 @@ let totalUnfunded = GAMES_JSON.reduce( (acc, i) => {
         return acc;
     }
 }, 0);
-console.log(totalUnfunded);
+
 // create a string that explains the number of unfunded games using the ternary operator
  
 let desc = `
@@ -213,6 +213,23 @@ const sortedGames =  GAMES_JSON.sort( (item1, item2) => {
 
 // use destructuring and the spread operator to grab the first and second games
 
+let [firstGame, secondGame, ...others] = sortedGames;
+
 // create a new element to hold the name of the top pledge game, then append it to the correct element
 
+let firstDesc = `
+    ${firstGame.name}
+`;
+
+let firstElement = document.createElement("p");
+firstElement.innerHTML = firstDesc;
+firstGameContainer.appendChild(firstElement);
+
 // do the same for the runner up item
+
+let secondDesc = `
+    ${secondGame.name}
+`;
+let secondElement = document.createElement("p");
+secondElement.innerHTML = secondDesc;
+secondGameContainer.appendChild(secondElement);
