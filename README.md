@@ -36,7 +36,7 @@ GIF created with LICEcap
 
 Describe any challenges encountered while building the app.
 
-
+**I haven't used filter or reduce in javascript at all so that was a bit challenging. I've only ever used it in python for algorithmic purposes. And learning how to use the destructuring and spread operator was new to me as well. There was a lot of new concepts I learned through this prework so that was a challenge in itself, but it was a very enjoyable experience. That was my first time DOM manipulating and I enjoyed it.**
 
 ## License
 
