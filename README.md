@@ -17,7 +17,8 @@ The following **required** functionality is completed:
 
 The following **optional** features are implemented:
 
-* [ ] List anything else that you can get done to improve the app functionality!
+* [x] List anything else that you can get done to improve the app functionality!
+* [x] Implemented search function so that users can search for games they heard about. Updates list with each letter entered for convenience.
 
 ## Video Walkthrough
 
