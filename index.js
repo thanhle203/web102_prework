@@ -233,3 +233,22 @@ let secondDesc = `
 let secondElement = document.createElement("p");
 secondElement.innerHTML = secondDesc;
 secondGameContainer.appendChild(secondElement);
+
+/***************************************************************************************
+ * Additional Features:
+ * Search bar that filters games according to if game name contains user input
+ */
+
+const searchInput = document.querySelector("[game-search]");
+
+searchInput.addEventListener("input", (e) => {
+    const value = e.target.value.toString().toLowerCase();
+
+    let item = GAMES_JSON.filter( (i) => {
+        return i.name.toString().toLowerCase().includes(value);
+    });
+
+    deleteChildElements(gamesContainer);
+
+    addGamesToPage(item);
+})
